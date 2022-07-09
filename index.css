@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat&display=swap');
+p,ul,label, input, button{
+    font-family: 'Comfortaa', cursive;
+}
+
+h1,h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+h1{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+label{
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+}
+
+input{
+    width: 100%;
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 2px solid #9C9C9C;
+}
+
+.container{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.container_formulario{
+    padding: 1px 0 15px 0;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.data_in{
+    width: 68%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.data_in_boton input{
+    /* display: block; */
+    background: #00C9B7;
+    color: #FFFFFF;
+    text-align: center;
+    /* padding: 6px; */
+    padding: 9px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.data_in_boton input:active{
+    border: 3px solid blue;
+}
+
+.btn_prestamos{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    background: #00C9B7;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.btn_prestamos:active{
+    border: 3px solid blue;
+}
+
+.container_prestamos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.cont_prestamo{
+    background-color: #FFFFFF;
+    padding: 0 18px;
+    border-radius: 10px;
+}
+
+.cont_prestamo p,h2{
+    margin: 10px 0;
+}
