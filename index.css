@@ -12,6 +12,10 @@ h1,h2{
     font-family: 'Montserrat', sans-serif;
 }
 
+h2{
+    color: #ff4040;
+}
+
 html{
     background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
@@ -99,4 +103,16 @@ input{
 
 .cont_prestamo p,h2{
     margin: 10px 0;
+}
+
+
+@media screen and (max-width:768px) {
+    body{
+        padding: 0 24px;
+    }
+
+    .container_prestamos{
+        gap: 20px;
+        justify-content: center;
+    }
 }

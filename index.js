@@ -44,6 +44,16 @@ const anhadirPrestamo = () => {
 
 btnSimulador.onclick = anhadirPrestamo;
 
+const alertDataNone = () => {
+    Swal.fire({
+        title: 'Error!',
+        text: 'Simule un prestamo!',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+    })
+}
+
+
 const updateDisplay = () => {
 
     container_prestamos.innerHTML = null;
@@ -57,12 +67,14 @@ const updateDisplay = () => {
         let h2Cuota = document.createElement("h2");
     
         divPrestamo.className = "cont_prestamo";
-    
-        pPrestamo.append(`Prestamo : ${prestamo.cantidadPrestamo}`);
-        pPlazo.append(`Plazo : ${prestamo.plazoPrestamos}`);
-        pTasa.append(`Tasa : ${prestamo.tasaPrestamos}`);
-        h2Cuota.append(`Cuota : ${prestamo.valorCuotaMes}`);
-            
+        
+        const {cantidadPrestamo,plazoPrestamos,tasaPrestamos,valorCuotaMes} = prestamo;
+
+        pPrestamo.append(`Prestamo : S/ ${cantidadPrestamo}`);
+        pPlazo.append(`Plazo : ${plazoPrestamos} meses`);
+        pTasa.append(`Tasa : ${tasaPrestamos}%`);
+        h2Cuota.append(`Cuota : S/ ${valorCuotaMes}`);
+
         divPrestamo.append(pPrestamo,pPlazo,pTasa,h2Cuota)
     
         container_prestamos.append(divPrestamo);
@@ -75,13 +87,10 @@ const updateDisplay = () => {
 
 const verPrestamos = () => {
 
-    if(prestamos.length == 0)
-        alert("Simule un prestamo");
+    prestamos.length == 0 && alertDataNone();
 
     if (tempAnadirPrestamoDisplay ==1){
-
         updateDisplay();
-
         tempAnadirPrestamoDisplay = 0;
     }
 }
