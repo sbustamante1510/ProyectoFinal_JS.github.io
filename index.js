@@ -3,19 +3,29 @@
 
 const prestamos = []
 
+const URL = './data.json'
 const cantidad = document.getElementById("cantidad");
 const plazo = document.getElementById("plazo");
 const tasa = document.getElementById("tasa");
 const btnSimulador = document.getElementById("btnSimulador");
 const btnPrestamos = document.getElementById("btn_prestamos");
 const container_prestamos = document.getElementById("container_prestamos");
-let tempAnadirPrestamoDisplay = 0;
+let tempAnadirPrestamoDisplay;
+let conversionTiempoPorcentaje;
+
+fetch(URL)
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        tempAnadirPrestamoDisplay = data.tempAnadirPrestamoDisplay;
+        conversionTiempoPorcentaje = data.conversionTiempoPorcentaje;
+    })
 
 const calculoValorCuota = (prestamox,tiempoMesesx,tasax) => {
     prestamox = Number(prestamox);
     tiempoMesesx = Number(tiempoMesesx);
     tasax = Number(tasax);
-    conversionTiempoPorcentaje = 1200;
 
     let interes = (prestamox * tiempoMesesx * tasax)/(conversionTiempoPorcentaje); 
     let montoTotal = prestamox + interes;
