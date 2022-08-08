@@ -14,13 +14,13 @@ let tempAnadirPrestamoDisplay;
 let conversionTiempoPorcentaje;
 
 fetch(URL)
-    .then(res => {
-        return res.json();
-    })
+    .then(res => { return res.json();})
     .then(data => {
         tempAnadirPrestamoDisplay = data.tempAnadirPrestamoDisplay;
         conversionTiempoPorcentaje = data.conversionTiempoPorcentaje;
     })
+    .catch( err => {console.log("Hubo un error: " +err); })
+    .finally( () => {console.log("Termino el fetch"); })
 
 const calculoValorCuota = (prestamox,tiempoMesesx,tasax) => {
     prestamox = Number(prestamox);
@@ -51,7 +51,6 @@ const anhadirPrestamo = () => {
 
 }
 
-
 btnSimulador.onclick = anhadirPrestamo;
 
 const alertDataNone = () => {
@@ -62,7 +61,6 @@ const alertDataNone = () => {
         confirmButtonText: 'Aceptar'
     })
 }
-
 
 const updateDisplay = () => {
 
